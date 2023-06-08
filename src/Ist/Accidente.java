@@ -81,7 +81,7 @@ public class Accidente {
 
     @Override
     public String toString() {
-        return "Accidente{" +
+        return "Accidentes{" +
                 "id=" + id +
                 ", run='" + run + '\'' +
                 ", fechaAccidente='" + fechaAccidente + '\'' +
