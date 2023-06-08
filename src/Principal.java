@@ -1,6 +1,7 @@
-import Ist.Contenedor;
-import java.util.Scanner;
 
+import Ist.ContenedorCap;
+import Ist.ContenedorUs;
+import java.util.Scanner;
 public class Principal {
     private static Scanner entrada = new Scanner(System.in);
 
@@ -10,49 +11,50 @@ public class Principal {
     }
     public static void menu() {
         int op;
-        Contenedor contenedor = new Contenedor();
+        ContenedorUs contenedorUs = new ContenedorUs();
+        ContenedorCap contenedorCap = new ContenedorCap();
         do {
             muestraMenu();
-            System.out.println("Selecciona la opción del menú: ");
+            System.out.println("Selecciona una opción del menú: ");
             op = opcionDeMenu();
             switch (op) {
                 case 1: {
-                    contenedor.almacenarCliente();
+                    contenedorUs.almacenarCliente();
                     break;
                 }
                 case 2: {
-                    contenedor.almacenarProfesional();
+                    contenedorUs.almacenarProfesional();
                     break;
                 }
                 case 3: {
-                    contenedor.almacenarAdministrativo();
+                    contenedorUs.almacenarAdministrativo();
                     break;
                 }
                 case 4: {
-                    contenedor.almacenarCapacitacion();
+                    contenedorCap.almacenarCapacitacion();
                     break;
                 }
                 case 5: {
-                    contenedor.eliminarUsuario();
+                    contenedorUs.eliminarUsuario();
                     break;
 
                 }
                 case 6: {
-                    contenedor.listarUsuarios();
+                    contenedorUs.listarUsuarios();
                     break;
                 }
                 case 7: {
-                    contenedor.listarUsuarioTipo();
+                    contenedorUs.listarUsuarioTipo();
                     break;
                 }
                 case 8: {
-                    contenedor.listarCapacitaciones();
+                    contenedorCap.listarCapacitaciones();
+
                     break;
                 }
                 case 0: {
-                    contenedor.mostrarEdad();
                     System.out.println("Ud. ha salido del sistema");
-                    //break;
+                    break;
                 }
                 default: {
                     System.out.println("Debe ingresar una opción del menú");
