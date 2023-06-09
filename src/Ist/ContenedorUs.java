@@ -3,18 +3,28 @@ package Ist;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.time.LocalDate;
-import java.time.Period;
-import java.time.format.DateTimeFormatter;
 
-public class Contenedor {
+/**
+ * Clase que manipula los datos relativos a los usuarios
+ */
+
+public class ContenedorUs {
+
+    /*+
+    Creación de variable lista para almacenar usuarios
+     */
     private List<Iasesoria> asesorias;
-    private List<Capacitacion> capacitaciones;
 
-    public Contenedor() {
+    /**
+     * creación de la lista capacitaciones
+     */
+    public ContenedorUs() {
         asesorias = new ArrayList<>();
-        capacitaciones = new ArrayList<>();
     }
+
+    /**
+     * Manipulación de datos para guardar un cliente
+     */
 
     public void almacenarCliente() {
         Scanner entrada = new Scanner(System.in);
@@ -22,9 +32,25 @@ public class Contenedor {
 
         cliente.setTipo(1);
 
-        System.out.println("Ingrese run del cliente");
-        String run = entrada.nextLine().trim();
-        cliente.setRun(run);
+        /**
+         * Ingreso del run validando que no sea un numero mayor a 99.999.999
+         */
+        String run;
+        do {
+            System.out.println("Ingrese run del cliente sin puntos y con guión:");
+            run = entrada.nextLine().trim();
+
+            if (Validador.validaRun(run)) {
+                cliente.setRun(run);
+            } else {
+                System.out.println("Rut inválido. Intente nuevamente.");
+            }
+        } while (!Validador.validaRun(run));
+
+
+        /**
+         * Ingreso de nombre validando que sea obligatorio, mayor a 4 y menor que 31
+         */
 
         String nombres;
         do {
@@ -40,6 +66,10 @@ public class Contenedor {
 
         cliente.setNombres(nombres);
 
+        /**
+         * Ingreso de apellido validando que sea obligatorio, mayor a 4 y menor que 31
+         */
+
         String apellidos;
         do {
             System.out.println("Ingrese apellidos del cliente");
@@ -54,9 +84,13 @@ public class Contenedor {
 
         cliente.setApellidos(apellidos);
 
+        /**
+         * Ingreso de fecha que sea obligatorio.
+         */
+
         String fecha;
         do {
-            System.out.println("Ingrese fecha de naciemiento del cliente");
+            System.out.println("Ingrese fecha de nacimiento del cliente");
             fecha = entrada.nextLine().trim();
 
             if (fecha.isEmpty()) {
@@ -109,13 +143,12 @@ public class Contenedor {
 
         entrada.nextLine();
 
-
         String direccion;
         do {
             System.out.println("Ingrese direccion del cliente");
             direccion = entrada.nextLine().trim();
 
-          if (direccion.length() > 70) {
+            if (direccion.length() > 70) {
                 System.out.println("La dirección no debe ser mayor a 70 caracteres");
             }
         } while (direccion.length() > 70);
@@ -157,9 +190,17 @@ public class Contenedor {
 
         profesional.setTipo(2);
 
-        System.out.println("Ingrese run del profesional");
-        String run = entrada.nextLine().trim();
-        profesional.setRun(run);
+        String run;
+        do {
+            System.out.println("Ingrese run del profesional sin puntos y con guión:");
+            run = entrada.nextLine().trim();
+
+            if (Validador.validaRun(run)) {
+                profesional.setRun(run);
+            } else {
+                System.out.println("Rut inválido. Intente nuevamente.");
+            }
+        } while (!Validador.validaRun(run));
 
         String nombres;
         do {
@@ -229,10 +270,7 @@ public class Contenedor {
             }
         } while (fechaIngreso.isEmpty());
         profesional.setFechaNac(fechaIngreso);
-
-
         asesorias.add(profesional);
-
     }
 
     public void almacenarAdministrativo(){
@@ -241,9 +279,17 @@ public class Contenedor {
 
         administrativo.setTipo(3);
 
-        System.out.println("Ingrese run del administrativo");
-        String run = entrada.nextLine().trim();
-        administrativo.setRun(run);
+        String run;
+        do {
+            System.out.println("Ingrese run del administrativo sin puntos y con guión:");
+            run = entrada.nextLine().trim();
+
+            if (Validador.validaRun(run)) {
+                administrativo.setRun(run);
+            } else {
+                System.out.println("Rut inválido. Intente nuevamente.");
+            }
+        } while (!Validador.validaRun(run));
 
 
         String nombres;
@@ -281,7 +327,7 @@ public class Contenedor {
             fecha = entrada.nextLine().trim();
 
             if (fecha.isEmpty()) {
-                System.out.println("La fecha es obligatorio. Por favor, " +
+                System.out.println("La fecha de nacimeinto es obligatoria. Por favor, " +
                         "ingrese una fecha válida.");
             }
         } while (fecha.isEmpty());
@@ -313,50 +359,17 @@ public class Contenedor {
             }else if (experiencia.length() > 100) {
                 System.out.println("La experiencia no  debe sobrepasar los 100 caracteres. " +
                         "Por favor, ingrese un dato válido.");
-
+            }
 
         } while (experiencia.isEmpty() || experiencia.length() > 100);
-            
+
         administrativo.setArea(experiencia);
 
         asesorias.add(administrativo);
 
     }
 
-    public void almacenarCapacitacion(){
 
-        Scanner entrada = new Scanner(System.in);
-        Capacitacion capacitacion = new Capacitacion();
-
-        System.out.println("Ingrese ID");
-        int id = entrada.nextInt();
-        capacitacion.setId(id);
-
-        System.out.println("Ingrese Rut de la empresa");
-        String rut = entrada.nextLine().trim();
-        capacitacion.setRut(rut);
-
-        System.out.println("Ingrese dia de la capacitación");
-        String dia = entrada.nextLine();
-        capacitacion.setDia(dia);
-
-        System.out.println("Ingrese lugar de la capacitación");
-        String lugar = entrada.nextLine();
-        capacitacion.setLugar(lugar);
-
-        System.out.println("Ingrese duración de la capacitación");
-        String duracion = entrada.nextLine();
-        capacitacion.setDuracion(duracion);
-
-        System.out.println("Ingrese hora de la capacitación");
-        String hora = entrada.nextLine();
-        capacitacion.setHora(hora);
-
-        System.out.println("Ingrese cantidad de asistentes a la capacitación");
-        int cantidad = entrada.nextInt();
-        capacitacion.setCantidadAsistentes(cantidad);
-        capacitaciones.add(capacitacion);
-    }
     public void eliminarUsuario(){
         Scanner entrada = new Scanner(System.in);
         System.out.println("Ingrese run de usuario a eliminar");
@@ -392,11 +405,6 @@ public class Contenedor {
 
     }
 
-    public void listarCapacitaciones(){
-        for (Capacitacion capacitacion : capacitaciones) {
-            capacitacion.mostrarDetalle();
-        }
-    }
 
     public void listarUsuarios() {
         for (Iasesoria asesoria : asesorias) {
@@ -407,23 +415,8 @@ public class Contenedor {
         }
     }
 
-    public void mostrarEdad(){
-
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        for (Iasesoria asesoria : asesorias) {
-            if (asesoria instanceof Usuario) {
-                Usuario usuario = (Usuario) asesoria;
-
-                String fechaNacimiento = usuario.getFechaNac();
-                LocalDate fechaNac = LocalDate.parse(fechaNacimiento, formatter);
-                LocalDate fechaActual = LocalDate.now();
-                Period periodo = Period.between(fechaNac, fechaActual);
-                int edad = periodo.getYears();
-                System.out.println("La edad actual es: " + edad + " años.");
-            }
-        }
 
 
-    }
+
 
 }

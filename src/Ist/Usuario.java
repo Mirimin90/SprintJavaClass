@@ -73,7 +73,7 @@ public class Usuario implements Iasesoria{
     }
 
     public void mostrarEdad(){
-        Contenedor contenedor = new Contenedor();
+        ContenedorUs contenedor = new ContenedorUs();
         contenedor.mostrarEdad();
     }
 

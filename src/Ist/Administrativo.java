@@ -1,17 +1,36 @@
 package Ist;
 
+/**
+ * Clase administrativo extiende de usuario
+ */
 public class Administrativo extends Usuario{
+
+    /**
+     * Declaración de variables para uso de la clase Administrativo
+     */
     private String area;
     private String experiencia;
 
+    /**
+     * Creación del constructor vacío
+     */
     public Administrativo() {
     }
 
+    /**
+     * Creación del constructor con todos los parámetros
+     * @param area Registra el area del administrativo
+     * @param experiencia registra la experiencia del administrativo
+     */
     public Administrativo(String area, String experiencia) {
         this.area = area;
         this.experiencia = experiencia;
     }
 
+    /**
+     * Creación de métotos getters and setters
+     * @return
+     */
     public String getArea() {
         return area;
     }
@@ -28,6 +47,10 @@ public class Administrativo extends Usuario{
         this.experiencia = experiencia;
     }
 
+    /**
+     * Creación del método ToString
+     * @return
+     */
     @Override
     public String toString() {
         return "Administrativo{" +
@@ -36,6 +59,9 @@ public class Administrativo extends Usuario{
                 '}';
     }
 
+    /**
+     * Creación del método analizar usuario
+     */
     public void analizarUsuario(){
         super.analizarUsuario();
         System.out.println("Area: " + area);
