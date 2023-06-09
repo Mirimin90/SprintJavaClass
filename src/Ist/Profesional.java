@@ -1,19 +1,32 @@
 package Ist;
 
 public class Profesional extends Usuario{
-
+    /**
+     * Declaración de variables de la clase
+     */
     private String titulo;
     private String fechaIngreso;
 
+    /**
+     * Creación del constructor vacío
+     */
     public Profesional() {
     }
 
-    public Profesional(String titulo) {
+    /**
+     * Creación del constructor con todas las variables
+     * @param titulo String que recibe el título del profesional
+     * @param fechaIngreso String que recibe fecha de ingreso del profesional
+     */
+    public Profesional(String titulo, String fechaIngreso) {
         this.titulo = titulo;
-        this.fechaIngreso= titulo;
-
+        this.fechaIngreso = fechaIngreso;
     }
 
+    /**
+     * Creación de getters and setters
+     * @return
+     */
     public String getTitulo() {
         return titulo;
     }
@@ -30,6 +43,10 @@ public class Profesional extends Usuario{
         this.fechaIngreso = fechaIngreso;
     }
 
+    /**
+     * Creación del método toString
+     * @return
+     */
     @Override
     public String toString() {
         return "Profesional{" +
@@ -40,7 +57,9 @@ public class Profesional extends Usuario{
 
     @Override
 
-
+    /**
+     * Creación del método analizar usuario invocando a la super clase
+     */
     public void analizarUsuario(){
         super.analizarUsuario();
         System.out.println("Titulo: " + titulo);

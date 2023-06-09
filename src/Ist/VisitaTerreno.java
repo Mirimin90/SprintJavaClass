@@ -1,6 +1,9 @@
 package Ist;
 
 public class VisitaTerreno {
+    /**
+     * Declaración de variables de la clase VisitaTerreno
+     */
     private int id;
     private String run;
     private String fechaVisita;
@@ -8,9 +11,21 @@ public class VisitaTerreno {
     private String lugar;
     private String comentarios;
 
+    /**
+     * Creador del constructor vacío
+     */
     public VisitaTerreno() {
     }
 
+    /**
+     * Creación del constructor con parámetros
+     * @param id recibe identificador de visita a terreno
+     * @param run recibe el run del visitador
+     * @param fechaVisita recibe la fecha de visita a terreno
+     * @param horaVisita recibe la hora de la visita a terreno
+     * @param lugar recibe el lugar de la visita a terreno
+     * @param comentarios recibe los comentarios de la visita a terreno
+     */
     public VisitaTerreno(int id, String run, String fechaVisita, String horaVisita,
                          String lugar, String comentarios) {
         this.id = id;
@@ -21,6 +36,10 @@ public class VisitaTerreno {
         this.comentarios = comentarios;
     }
 
+    /**
+     * Creación de los getters and setters
+     * @return
+     */
     public int getId() {
         return id;
     }
@@ -69,6 +88,10 @@ public class VisitaTerreno {
         this.comentarios = comentarios;
     }
 
+    /**
+     * Creación del método toString
+     * @return
+     */
     @Override
     public String toString() {
         return "VisitaTerreno{" +

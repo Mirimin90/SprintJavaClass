@@ -2,6 +2,9 @@ import Ist.ContenedorCap;
 import Ist.ContenedorUs;
 import java.util.Scanner;
 public class Principal {
+    /**
+     * Se declara Sacnner para capturar las opciones tecleadas por el usuario
+     */
     private static Scanner entrada = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -9,6 +12,10 @@ public class Principal {
         menu();
     }
 
+    /**
+     * Método que muestra por pantalla las opciones del menu invocando al metodo
+     * muestramenu()
+     */
     public static void menu() {
         int op;
         ContenedorUs contenedorUs = new ContenedorUs();
@@ -63,6 +70,9 @@ public class Principal {
         } while (op != 0);
     }
 
+    /**
+     * Método que muestra el menú por pantalla
+     */
     public static void muestraMenu() {
         System.out.println("===========================");
         System.out.println(" MENÚ PRINCIPAL");
@@ -79,6 +89,10 @@ public class Principal {
         System.out.println("---------------------------");
     }
 
+    /**
+     * Método que captura la entrada por teclado del usuario
+     * @return
+     */
     public static int opcionDeMenu() {
         return entrada.nextInt();
     }

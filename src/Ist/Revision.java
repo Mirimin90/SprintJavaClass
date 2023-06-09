@@ -1,16 +1,30 @@
 package Ist;
 
 public class Revision {
+
+    /**
+     * Declaración de variables de la clase revision
+     */
     private int id;
     private int id_visita;
     private String nomRevision;
     private String detRevision;
     private int estado;
 
-
+    /**
+     * Creación del constructor vavío
+     */
     public Revision() {
     }
 
+    /**
+     * Creación del constructor con todos los métodos
+     * @param id Identificador de la revisión
+     * @param id_visita Identificador de la visita a terreno
+     * @param nomRevision Nombre de la revisión
+     * @param detRevision Detalle de la revisión
+     * @param estado estado de la revisión
+     */
     public Revision(int id, int id_visita, String nomRevision, String detRevision, int estado) {
         this.id = id;
         this.id_visita = id_visita;
@@ -19,6 +33,10 @@ public class Revision {
         this.estado = estado;
     }
 
+    /**
+     * Creación de getters a setters
+     * @return
+     */
     public int getId() {
         return id;
     }
@@ -59,6 +77,10 @@ public class Revision {
         this.estado = estado;
     }
 
+    /**
+     * Creación del método toString
+     * @return
+     */
     @Override
     public String toString() {
         return "Revision{" +
