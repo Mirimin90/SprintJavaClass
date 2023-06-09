@@ -19,7 +19,7 @@ public class ContenedorCap {
      * creación de la lista capacitaciones
      */
 
-     public ContenedorCap() {
+    public ContenedorCap() {
         capacitaciones = new ArrayList<>();
     }
 
