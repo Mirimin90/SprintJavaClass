@@ -6,6 +6,9 @@ Integrantes
 - Cristian Contreras
 - Miriam Pulgar
 
+Link de repositrio Github.
+https://github.com/Mirimin90/SprintJavaClass.git
+
 @Versión 4.0
 
 Comentarios generales.
