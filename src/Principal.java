@@ -91,7 +91,6 @@ public class Principal {
 
     /**
      * Método que captura la entrada por teclado del usuario
-     * @return
      */
     public static int opcionDeMenu() {
         return entrada.nextInt();
