@@ -1,6 +1,10 @@
 package Ist;
 
 public class Capacitacion {
+
+    /**
+     * Declaración de variables para uso de la clase Capacitación
+     */
     private int id;
     private String rut;
     private String dia;
@@ -9,8 +13,22 @@ public class Capacitacion {
     private String duracion;
     private int cantidadAsistentes;
 
+    /**
+     * Creación del constructor vacío
+     */
     public Capacitacion() {
     }
+
+    /**
+     * Creación del constructor con todos los parámetros
+     * @param id Registra id de dentificación de la capacitación
+     * @param rut Registra el rut de la empresa
+     * @param dia Resgitra el día de la capacitación
+     * @param hora Registra la hora de la capacitación
+     * @param lugar Registra el lugar de la capacitación
+     * @param duracion Registra la duración de la capacitación
+     * @param cantidadAsistentes Registra la cantidad de asistentes de la capacitación
+     */
 
     public Capacitacion(int id, String rut, String dia, String hora, String lugar,
                         String duracion, int cantidadAsistentes) {
@@ -23,6 +41,10 @@ public class Capacitacion {
         this.cantidadAsistentes = cantidadAsistentes;
     }
 
+    /**
+     * Creación de los métodos getters and setters
+     * @return
+     */
     public int getId() {
         return id;
     }
@@ -79,6 +101,10 @@ public class Capacitacion {
         this.cantidadAsistentes = cantidadAsistentes;
     }
 
+    /**
+     * Creaciónd el método Tostring
+     * @return
+     */
     @Override
     public String toString() {
         return "Capacitacion{" +
@@ -92,6 +118,10 @@ public class Capacitacion {
                 '}';
     }
 
+    /**
+     * Creación del método mostrar detalle que entrega la información relativa
+     * a la capacitación
+     */
     public void mostrarDetalle(){
         System.out.println("La capacitación será en " + lugar + " a las " + hora + " del día " + dia +
                 ", y durará " + duracion + " minutos");

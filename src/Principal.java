@@ -1,4 +1,3 @@
-
 import Ist.ContenedorCap;
 import Ist.ContenedorUs;
 import java.util.Scanner;
@@ -9,6 +8,7 @@ public class Principal {
 
         menu();
     }
+
     public static void menu() {
         int op;
         ContenedorUs contenedorUs = new ContenedorUs();
@@ -62,6 +62,7 @@ public class Principal {
             }
         } while (op != 0);
     }
+
     public static void muestraMenu() {
         System.out.println("===========================");
         System.out.println(" MENÚ PRINCIPAL");
@@ -81,5 +82,4 @@ public class Principal {
     public static int opcionDeMenu() {
         return entrada.nextInt();
     }
-
 }
