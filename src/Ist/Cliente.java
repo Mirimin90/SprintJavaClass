@@ -20,7 +20,7 @@ public class Cliente extends Usuario {
     /**
      * Creación del constructor con todos los parámetros
      * @param telefono Registra el teléfono del cliente
-     * @param afp Registra la AFp del cliente
+     * @param afp Registra la AFP del cliente
      * @param sistemaSalud Resgistra el sistema de salud del cliente 1. Fonasa.
      *                     2. Isapre
      * @param direccion Registra la dirección del cliente
@@ -96,12 +96,12 @@ public class Cliente extends Usuario {
     @Override
     public String toString() {
         return "Cliente{" +
-                "telefono='" + telefono + '\'' +
-                ", afp='" + afp + '\'' +
-                ", SistemaSalud=" + SistemaSalud +
-                ", direccion='" + direccion + '\'' +
-                ", comuna='" + comuna + '\'' +
-                ", edad=" + edad +
+                "Teléfono='" + telefono + '\'' +
+                ", AFP='" + afp + '\'' +
+                ", Sistema de Salud=" + SistemaSalud +
+                ", Dirección='" + direccion + '\'' +
+                ", Comuna='" + comuna + '\'' +
+                ", Edad=" + edad +
                 '}';
     }
 

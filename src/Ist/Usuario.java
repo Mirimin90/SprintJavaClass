@@ -1,5 +1,8 @@
 package Ist;
 
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 
 
 public class Usuario implements Iasesoria{
@@ -72,10 +75,16 @@ public class Usuario implements Iasesoria{
                 '}';
     }
 
-    public void mostrarEdad(){
-        ContenedorUs contenedor = new ContenedorUs();
-        contenedor.mostrarEdad();
+    public void mostrarEdad() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        String fechaNacimiento = getFechaNac();
+        LocalDate fechaNac = LocalDate.parse(fechaNacimiento, formatter);
+        LocalDate fechaActual = LocalDate.now();
+        Period periodo = Period.between(fechaNac, fechaActual);
+        int edad = periodo.getYears();
+        System.out.println("La edad actual es: " + edad + " años.");
     }
+
 
     public void analizarUsuario() {
         System.out.println("RUN: " + run);

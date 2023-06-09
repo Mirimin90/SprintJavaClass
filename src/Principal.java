@@ -15,7 +15,7 @@ public class Principal {
         ContenedorCap contenedorCap = new ContenedorCap();
         do {
             muestraMenu();
-            System.out.println("Selecciona una opción del menú: ");
+            System.out.println("Seleccione una opción del menú: ");
             op = opcionDeMenu();
             switch (op) {
                 case 1: {
@@ -72,7 +72,7 @@ public class Principal {
         System.out.println("3. Almacenar administrativo");
         System.out.println("4. Almacenar capacitación");
         System.out.println("5. Eliminar usuario");
-        System.out.println("6. Listar usuario");
+        System.out.println("6. Listar usuarios");
         System.out.println("7. Listar usuarios por tipo");
         System.out.println("8. Listar capacitaciones");
         System.out.println("0. Salir");
