@@ -38,10 +38,13 @@ public class ContenedorAcc {
             rut = entrada.nextLine().trim();
 
             if (Validador.validaRun(rut)) {
-                visitaTerreno.setRun(rut);
-            } else {
-                System.out.println("RUT inválido. Intente nuevamente.");
-            }
+
+                    visitaTerreno.setRun(rut);
+                } else {
+                    System.out.println("Rut inválido. Intente nuevamente.");
+                }
+
+
         } while (!Validador.validaRun(rut));
 
 
@@ -166,6 +169,23 @@ public class ContenedorAcc {
         } while (detalle.length() > 100);
         revision.setDetRevision(detalle);
         cuentaRevision = cuentaRevision++;
+
+        int estado;
+        do {
+            System.out.println("Ingrese estado de revsión 1. Sin problemas / " +
+                    "2. Con observaciones / 3. No aprueba");
+            estado = entrada.nextInt();
+
+            if (estado != 1 && estado != 2 && estado != 3) {
+                System.out.println("Debe ingrese opción salud 1. Sin problemas " +
+                        "/ 2. Con observaciones / 3. No aprueba");
+            }
+        } while (estado != 1 && estado != 2 && estado != 3);
+
+        revision.setEstado(estado);
+
+        entrada.nextLine();
+
     }
 
     /**
@@ -186,12 +206,21 @@ public class ContenedorAcc {
             System.out.println("Ingrese el RUN del accidentado:");
             run = entrada.nextLine().trim();
 
-            if (Validador.validaRun(run)) {
-                accidente.setRun(run);
-            } else {
-                System.out.println("RUN inválido. Intente nuevamente.");
+
+            if (run.isEmpty()) {
+                System.out.println("El rut es obligatorio. Por favor, ingrese un " +
+                        "dato válido.");
             }
-        } while (!Validador.validaRun(run));
+            else {
+
+                if (Validador.validaRun(run)) {
+                    accidente.setRun(run);
+                } else {
+                    System.out.println("Run inválido. Intente nuevamente.");
+                }
+
+
+        } while (run.isEmpty() || !Validador.validaRun(run));
 
         /**
          * Ingreso de fecha validando que sea el formato correcto y que no este vacía.

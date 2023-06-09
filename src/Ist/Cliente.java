@@ -6,7 +6,7 @@ package Ist;
 public class Cliente extends Usuario {
     private String telefono;
     private String afp;
-    private int SistemaSalud;
+    private String SistemaSalud;
     private String direccion;
     private String comuna;
     private int edad;
@@ -27,11 +27,11 @@ public class Cliente extends Usuario {
      * @param comuna Registra la comuna del cliente
      * @param edad Resgitra la edad del cliente
      */
-    public Cliente(String telefono, String afp, int sistemaSalud, String direccion,
+    public Cliente(String telefono, String afp, String sistemaSalud, String direccion,
                    String comuna, int edad) {
         this.telefono = telefono;
         this.afp = afp;
-        SistemaSalud = sistemaSalud;
+        this.SistemaSalud = sistemaSalud;
         this.direccion = direccion;
         this.comuna = comuna;
         this.edad = edad;
@@ -57,11 +57,11 @@ public class Cliente extends Usuario {
         this.afp = afp;
     }
 
-    public int getSistemaSalud() {
+    public String getSistemaSalud() {
         return SistemaSalud;
     }
 
-    public void setSistemaSalud(int sistemaSalud) {
+    public void setSistemaSalud(String sistemaSalud) {
         SistemaSalud = sistemaSalud;
     }
 

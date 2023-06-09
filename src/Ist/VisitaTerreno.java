@@ -90,7 +90,6 @@ public class VisitaTerreno {
 
     /**
      * Creación del método toString
-     * @return
      */
     @Override
     public String toString() {

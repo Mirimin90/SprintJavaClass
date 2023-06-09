@@ -57,10 +57,16 @@ public class ContenedorCap {
                 System.out.println("El RUT es obligatorio. Por favor, " +
                         "ingrese un dato válido.");
             }
-        } while (rut.isEmpty());
+            else {
+                if (Validador.validaRun(rut)) {
+                    capacitacion.setRut(rut);
+                } else {
+                    System.out.println("Rut inválido. Intente nuevamente.");
+                }
+            }
+        } while (rut.isEmpty() || !Validador.validaRun(rut));
 
         capacitacion.setRut(rut);
-
         /**
          * Ingreso de día validando que sea de lunes a domingo
          */
