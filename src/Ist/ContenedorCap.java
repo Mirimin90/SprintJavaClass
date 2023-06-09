@@ -19,12 +19,12 @@ public class ContenedorCap {
      * creación de la lista capacitaciones
      */
 
-     public ContenedorCap() {
+    public ContenedorCap() {
         capacitaciones = new ArrayList<>();
     }
 
     /**
-     * Método que lista las capacitaciones invocando al método mostrar detale de la
+     * Método que lista las capacitaciones invocando al método mostrar detalle de la
      * clase capacitación
      */
     public void listarCapacitaciones(){
@@ -50,11 +50,11 @@ public class ContenedorCap {
 
         String rut;
         do {
-            System.out.println("Ingrese Rut de la empresa");
+            System.out.println("Ingrese RUT de la empresa");
             rut = entrada.nextLine().trim();
 
             if (rut.isEmpty()) {
-                System.out.println("El rut es obligatorio. Por favor, " +
+                System.out.println("El RUT es obligatorio. Por favor, " +
                         "ingrese un dato válido.");
             }
             else {
@@ -68,7 +68,7 @@ public class ContenedorCap {
 
         capacitacion.setRut(rut);
         /**
-         * Ingreso de día valindando que sea de lunes a domingo
+         * Ingreso de día validando que sea de lunes a domingo
          */
         String dia;
         do {
