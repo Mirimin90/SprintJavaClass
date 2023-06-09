@@ -3,14 +3,20 @@ package Ist;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Clase que manipula y validad metodos comunes
+ */
 public class Validador {
 
+    /**
+     * Método de tipo booleano que devuelve un true si el formato es el correto y
+     * false si es incorrecto
+     * @param fecha recibe la fecha a evaluar
+     * @return Verdadeo o falso
+     */
     public static boolean validaFecha(String fecha) {
         try {
-            // Definir el formato esperado de la fecha
             DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-
-            // Intentar parsear la fecha
             LocalDate.parse(fecha, formato);
             return true;
         } catch (Exception e) {
@@ -18,6 +24,15 @@ public class Validador {
         }
     }
 
+    /**
+     * Método de tipo booleano que devuelve un true si:
+     * la variable es mayor a 10 caracteres
+     * Valida si son solo dígitos
+     * Valida si el numero es mayor a 0 y menor a 99999999
+     * false si es incorrecto
+     * @param rut recibe rut a evaluar
+     * @return Verdadeo o falso
+     */
     public static boolean validaRun(String rut) {
 
 
@@ -26,7 +41,6 @@ public class Validador {
         if (rut.length() > 10){
             return false;
         }
-
         if (!rutNumberString.matches("\\d+")) {
             return false;
         }
@@ -39,6 +53,17 @@ public class Validador {
         }
     }
 
+
+    /**
+     * Método de tipo booleano: valida
+     * El largo de la variable es disitinto de 5 HH:MM
+     * Si el formato dividido por el caracter : se separa en 2 grupos de 2 caracteres
+     * Lo separa en horas y minutos
+     * Valida que la hora sea entre 0 y 23 y los minutos entre 0 y 59
+     * false si es incorrecto
+     * @param hora recibe hora a evaluar
+     * @return Verdadeo o falso
+     */
     public static boolean validaHora(String hora) {
         if (hora.length() != 5) {
             return false;

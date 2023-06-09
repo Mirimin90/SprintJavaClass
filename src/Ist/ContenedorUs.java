@@ -100,6 +100,10 @@ public class ContenedorUs {
         } while (fecha.isEmpty());
         cliente.setFechaNac(fecha);
 
+        /**
+         * Ingreso de telefono de caracter obligatorio
+         */
+
 
         String telefono;
         do {
@@ -112,6 +116,10 @@ public class ContenedorUs {
         } while (telefono.isEmpty());
 
         cliente.setTelefono(telefono);
+
+        /**
+         * Ingreso de AFP obligatorio, mayot a 3 y menor a 31 caracteres
+         */
 
         String afp;
         do {
@@ -127,7 +135,9 @@ public class ContenedorUs {
 
         cliente.setAfp(afp);
 
-
+        /**
+         * Ingreso de sistema de salud validando que sea 1 o 2.
+         */
 
         int salud;
         do {
@@ -143,6 +153,10 @@ public class ContenedorUs {
 
         entrada.nextLine();
 
+        /**
+         * Ingreso de dirección validando que no sea un dato mayor de 70 caracteres
+         */
+
         String direccion;
         do {
             System.out.println("Ingrese direccion del cliente");
@@ -155,7 +169,9 @@ public class ContenedorUs {
 
         cliente.setDireccion(direccion);
 
-
+        /**
+         * Ingreso de comuna validando que no sea un dato mayor a 50 caracteres
+         */
         String comuna;
         do {
             System.out.println("Ingrese comuna del cliente");
@@ -168,6 +184,9 @@ public class ContenedorUs {
 
         cliente.setComuna(comuna);
 
+        /**
+         * Ingreso de edad validando que sea mayor a 0 y menor a 151
+          */
         int edad;
         do {
             System.out.println("Ingrese edad del cliente");
@@ -190,6 +209,10 @@ public class ContenedorUs {
 
         profesional.setTipo(2);
 
+        /**
+         * Ingreso de run validando que no sea mayor a 99.999.999
+         */
+
         String run;
         do {
             System.out.println("Ingrese run del profesional sin puntos y con guión:");
@@ -202,6 +225,11 @@ public class ContenedorUs {
             }
         } while (!Validador.validaRun(run));
 
+
+        /**
+         * Ingreso de nombre de caracter obligatorio,mayor a 5 y menor a 31
+         * caracteres
+         */
         String nombres;
         do {
             System.out.println("Ingrese nombres del profesional");
@@ -217,6 +245,10 @@ public class ContenedorUs {
         profesional.setNombres(nombres);
 
 
+        /**
+         * Ingreso de apellidos de caracter obligatorio,mayor a 5 y menor a 31
+         * caracteres
+         */
         String apellidos;
         do {
             System.out.println("Ingrese apellidos del profesional");
@@ -233,6 +265,9 @@ public class ContenedorUs {
         profesional.setApellidos(apellidos);
 
 
+        /**
+         * Ingreso de fecha validando que no sea vacio
+         */
         String fecha;
         do {
             System.out.println("Ingrese fecha de naciemiento del profesional");
@@ -245,7 +280,9 @@ public class ContenedorUs {
         } while (fecha.isEmpty());
         profesional.setFechaNac(fecha);
 
-
+        /**
+         * Ingreso de título de caracter obligatorio.
+         */
         String titulo;
         do {
             System.out.println("Ingrese título del profesional");
@@ -258,6 +295,9 @@ public class ContenedorUs {
         } while (titulo.isEmpty());
         profesional.setTitulo(titulo);
 
+        /**
+         * Ingreso de fecha de ingreso del profesional de caracter obligatorio
+         */
 
         String fechaIngreso;
         do {
@@ -279,6 +319,10 @@ public class ContenedorUs {
 
         administrativo.setTipo(3);
 
+        /**
+         * Ingreso de run validando que no sea mayor a 99.999.999
+         */
+
         String run;
         do {
             System.out.println("Ingrese run del administrativo sin puntos y con guión:");
@@ -291,7 +335,10 @@ public class ContenedorUs {
             }
         } while (!Validador.validaRun(run));
 
-
+        /**
+         * Ingreso de nombre de caracter obligatorio, mayor a 4 y menor a 31
+         * caracteres
+         */
         String nombres;
         do {
             System.out.println("Ingrese nombres del administrativo");
@@ -306,6 +353,10 @@ public class ContenedorUs {
 
         administrativo.setNombres(nombres);
 
+        /**
+         * Ingreso de apellidos de caracter obligatorio, mayor a 4 y menor a 31
+         * caracteres.
+         */
         String apellidos;
         do {
             System.out.println("Ingrese apellidos del administrativo");
@@ -321,6 +372,9 @@ public class ContenedorUs {
         } while (apellidos.isEmpty() || apellidos.length() < 5 || apellidos.length() > 30);
         administrativo.setApellidos(apellidos);
 
+        /**
+         * Ingreso de fecha de caracter obligatorio
+         */
         String fecha;
         do {
             System.out.println("Ingrese fecha de naciemiento del administrativo");
@@ -332,6 +386,11 @@ public class ContenedorUs {
             }
         } while (fecha.isEmpty());
         administrativo.setFechaNac(fecha);
+
+        /**
+         * Ingreso de area de caracter obligatorio, mayor a 4 y menor a 21
+         * caracteres
+         */
 
         String area;
         do {
@@ -347,6 +406,10 @@ public class ContenedorUs {
             }
         } while (area.isEmpty() || area.length() < 5 || area.length() > 20);
         administrativo.setArea(area);
+
+        /**
+         * Ingreso de experiencia de caracter obligatorio y menor a 100 caracteres
+         */
 
         String experiencia;
         do {
@@ -369,7 +432,9 @@ public class ContenedorUs {
 
     }
 
-
+    /**
+     * Métod para eliminar un usuario de la lista
+     */
     public void eliminarUsuario(){
         Scanner entrada = new Scanner(System.in);
         System.out.println("Ingrese run de usuario a eliminar");
@@ -389,6 +454,9 @@ public class ContenedorUs {
         }
     }
 
+    /**
+     * Método que lista los usuarios por tipo Cliente, administrativo y profesional
+     */
     public void listarUsuarioTipo(){
         Scanner entrada = new Scanner(System.in);
         System.out.println("Ingrese perfil a listar: 1. Cliente / 2.Profesional / 3.Administrativo");
@@ -405,7 +473,9 @@ public class ContenedorUs {
 
     }
 
-
+    /**
+     * Lista todos los usuarios
+     */
     public void listarUsuarios() {
         for (Iasesoria asesoria : asesorias) {
             if (asesoria instanceof Usuario) {
@@ -414,9 +484,4 @@ public class ContenedorUs {
             }
         }
     }
-
-
-
-
-
 }
