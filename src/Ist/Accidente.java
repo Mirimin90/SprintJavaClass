@@ -22,10 +22,10 @@ public class Accidente {
     /**
      * Creación del constructor con todos los parámetros
      * @param id registra la id del accidente
-     * @param run registra el run del accidentado
+     * @param run registra el RUN del accidentado
      * @param fechaAccidente registra fecha del accidente
      * @param hora registra la hora del accidente
-     * @param lugar registra lusgar del accidente
+     * @param lugar registra lugar del accidente
      * @param origen  registra origen del accidente
      * @param consecuencias registra las consecuencias del accidente
      */

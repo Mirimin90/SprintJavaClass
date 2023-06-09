@@ -1,7 +1,7 @@
 package Ist;
 
 /**
- * Clase administrativo extiende de usuario
+ * Clase administrativo, extiende de usuario
  */
 public class Administrativo extends Usuario{
 
@@ -28,7 +28,7 @@ public class Administrativo extends Usuario{
     }
 
     /**
-     * Creación de métotos getters and setters
+     * Creación de métodos getters and setters
      * @return
      */
     public String getArea() {
@@ -54,8 +54,8 @@ public class Administrativo extends Usuario{
     @Override
     public String toString() {
         return "Administrativo{" +
-                "area='" + area + '\'' +
-                ", experiencia='" + experiencia + '\'' +
+                "Área='" + area + '\'' +
+                ", Experiencia='" + experiencia + '\'' +
                 '}';
     }
 

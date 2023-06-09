@@ -96,7 +96,7 @@ public class Usuario implements Iasesoria{
                 '}';
     }
 
-    /**
+   /**
      * Creación del metodo mostrar edad, la que calcula la fecha de nacimiento con
      * la fecha actual
      */
@@ -110,10 +110,12 @@ public class Usuario implements Iasesoria{
         System.out.println("La edad actual es: " + edad + " años.");
     }
 
+=======
     /**
      * Metodo analizar usuario que muestra por pantalla nombre, Apellido, Run,
      * feha de nacimiento, se invoca ademas de las clases hijas
      */
+
     public void analizarUsuario() {
         System.out.println("RUN: " + run);
         System.out.println("Nombre: " + nombres);

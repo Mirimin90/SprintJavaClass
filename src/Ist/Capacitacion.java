@@ -21,7 +21,7 @@ public class Capacitacion {
 
     /**
      * Creación del constructor con todos los parámetros
-     * @param id Registra id de dentificación de la capacitación
+     * @param id Registra id de identificación de la capacitación
      * @param rut Registra el rut de la empresa
      * @param dia Resgitra el día de la capacitación
      * @param hora Registra la hora de la capacitación
@@ -102,24 +102,24 @@ public class Capacitacion {
     }
 
     /**
-     * Creaciónd el método Tostring
+     * Creación del método Tostring
      * @return
      */
     @Override
     public String toString() {
-        return "Capacitacion{" +
-                "id=" + id +
-                ", rut='" + rut + '\'' +
-                ", dia='" + dia + '\'' +
+        return "Capacitación{" +
+                "ID=" + id +
+                ", RUT='" + rut + '\'' +
+                ", Día='" + dia + '\'' +
                 ", hora='" + hora + '\'' +
-                ", lugar='" + lugar + '\'' +
-                ", duracion='" + duracion + '\'' +
-                ", cantidadAsistentes=" + cantidadAsistentes +
+                ", Lugar='" + lugar + '\'' +
+                ", Duración='" + duracion + '\'' +
+                ", Cantidad de Asistentes=" + cantidadAsistentes +
                 '}';
     }
 
     /**
-     * Creación del método mostrar detalle que entrega la información relativa
+     * Creación del método mostrar detalle, que entrega la información relativa
      * a la capacitación
      */
     public void mostrarDetalle(){
