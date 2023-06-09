@@ -12,7 +12,7 @@ public class Revision {
     private int estado;
 
     /**
-     * Creación del constructor vavío
+     * Creación del constructor vacío
      */
     public Revision() {
     }
@@ -35,7 +35,6 @@ public class Revision {
 
     /**
      * Creación de getters a setters
-     * @return
      */
     public int getId() {
         return id;
@@ -79,7 +78,6 @@ public class Revision {
 
     /**
      * Creación del método toString
-     * @return
      */
     @Override
     public String toString() {

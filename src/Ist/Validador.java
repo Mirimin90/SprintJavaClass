@@ -90,4 +90,18 @@ public class Validador {
     }
 
 
+    public static boolean validarNumero(String input) {
+        if (input.matches("\\d+")) { // Verifica si la cadena contiene solo dígitos
+            return true;
+        } else {
+            try {
+                Integer.parseInt(input); // Intenta convertir la cadena a un entero
+                return true;
+            } catch (NumberFormatException e) {
+                return false;
+            }
+        }
+    }
+
+
 }

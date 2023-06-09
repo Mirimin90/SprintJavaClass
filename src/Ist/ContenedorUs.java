@@ -30,6 +30,7 @@ public class ContenedorUs {
         Scanner entrada = new Scanner(System.in);
         Cliente cliente = new Cliente();
 
+
         cliente.setTipo(1);
 
         /**
@@ -90,14 +91,19 @@ public class ContenedorUs {
 
         String fecha;
         do {
-            System.out.println("Ingrese fecha de nacimiento del cliente");
+            System.out.println("Ingrese fecha de nacimiento del cliente formato " +
+                    "DD/MM/AAAA");
             fecha = entrada.nextLine().trim();
 
             if (fecha.isEmpty()) {
                 System.out.println("La fecha es obligatoria. Por favor, " +
                         "ingrese una fecha válida.");
             }
-        } while (fecha.isEmpty());
+            else if (!Validador.validaFecha(fecha)) {
+                System.out.println("Fecha inválida. Por favor, ingrese una fecha en formato DD/MM/AAAA.");
+            }
+
+        } while (fecha.isEmpty() || !Validador.validaFecha(fecha));
         cliente.setFechaNac(fecha);
 
         /**
@@ -126,12 +132,11 @@ public class ContenedorUs {
             System.out.println("Ingrese AFP del cliente");
             afp = entrada.nextLine().trim();
 
-            if (afp.isEmpty()) {
-                System.out.println("La AFP es obligatoria. Por favor, ingrese un dato válido.");
-            } else if (afp.length() < 4 || afp.length() > 30) {
-                System.out.println("La AFP debe tener entre 4 y 30 caracteres. Por favor, ingrese un dato válido.");
+            if (afp.length() < 4 || afp.length() > 30) {
+                System.out.println("La AFP debe tener entre 4 y 30 caracteres. " +
+                        "Por favor, ingrese un dato válido.");
             }
-        } while (afp.isEmpty() || afp.length() < 4 || afp.length() > 30);
+        } while (afp.length() < 4 || afp.length() > 30);
 
         cliente.setAfp(afp);
 
@@ -139,19 +144,18 @@ public class ContenedorUs {
          * Ingreso de sistema de salud validando que sea 1 o 2.
          */
 
-        int salud;
+        String salud;
+
         do {
             System.out.println("Ingrese sistema de salud 1. Fonasa / 2. Isapre");
-            salud = entrada.nextInt();
+            salud = entrada.nextLine();
 
-            if (salud != 1 && salud != 2) {
+            if (!salud.equals("1") && !salud.equals("2")) {
                 System.out.println("Debe ingrese opción salud 1. Fonasa / 2. Isapre");
             }
-        } while (salud != 1 && salud != 2);
+        } while (!salud.equals("1") && !salud.equals("2"));
 
         cliente.setSistemaSalud(salud);
-
-        entrada.nextLine();
 
         /**
          * Ingreso de dirección validando que no sea un dato mayor de 70 caracteres
@@ -193,7 +197,7 @@ public class ContenedorUs {
             edad = entrada.nextInt();
 
             if (edad < 0  || edad > 150) {
-                System.out.println("La edad es obligatoria y debe ser entre 0 y 150 años");
+                System.out.println("La edad debe ser entre 0 y 150 años");
 
             }
         } while (edad < 0  || edad > 150);
@@ -270,14 +274,18 @@ public class ContenedorUs {
          */
         String fecha;
         do {
-            System.out.println("Ingrese fecha de naciemiento del profesional");
+            System.out.println("Ingrese fecha de naciemiento del profesional, formato" +
+                    "DD/MM/AAAA");
             fecha = entrada.nextLine().trim();
 
             if (fecha.isEmpty()) {
-                System.out.println("La fecha es obligatorio. Por favor, " +
+                System.out.println("La fecha es obligatoria. Por favor, " +
                         "ingrese una fecha válida.");
             }
-        } while (fecha.isEmpty());
+            else if (!Validador.validaFecha(fecha)) {
+                System.out.println("Fecha inválida. Por favor, ingrese una fecha en formato DD/MM/AAAA.");
+            }
+        } while (fecha.isEmpty() || !Validador.validaFecha(fecha));
         profesional.setFechaNac(fecha);
 
         /**
@@ -301,14 +309,18 @@ public class ContenedorUs {
 
         String fechaIngreso;
         do {
-            System.out.println("Ingrese fecha de ingreso del profesional");
+            System.out.println("Ingrese fecha de ingreso del profesional, formato" +
+                    "DD/MM/AAAA");
             fechaIngreso = entrada.nextLine().trim();
 
             if (fechaIngreso.isEmpty()) {
                 System.out.println("La fecha de ingreso es obligatorio. Por favor, " +
                         "ingrese una fecha válida.");
             }
-        } while (fechaIngreso.isEmpty());
+            else if (!Validador.validaFecha(fechaIngreso)) {
+                System.out.println("Fecha inválida. Por favor, ingrese una fecha en formato DD/MM/AAAA.");
+            }
+        } while (fecha.isEmpty() || !Validador.validaFecha(fechaIngreso));
         profesional.setFechaNac(fechaIngreso);
         asesorias.add(profesional);
     }
@@ -377,14 +389,18 @@ public class ContenedorUs {
          */
         String fecha;
         do {
-            System.out.println("Ingrese fecha de naciemiento del administrativo");
+            System.out.println("Ingrese fecha de naciemiento del administrativo," +
+                    "formato DD/MM/AAAA");
             fecha = entrada.nextLine().trim();
 
             if (fecha.isEmpty()) {
                 System.out.println("La fecha de nacimeinto es obligatoria. Por favor, " +
                         "ingrese una fecha válida.");
             }
-        } while (fecha.isEmpty());
+            else if (!Validador.validaFecha(fecha)) {
+                System.out.println("Fecha inválida. Por favor, ingrese una fecha en formato DD/MM/AAAA.");
+            }
+        } while (fecha.isEmpty() || !Validador.validaFecha(fecha));
         administrativo.setFechaNac(fecha);
 
         /**
@@ -415,16 +431,11 @@ public class ContenedorUs {
         do {
             System.out.println("Ingrese experiencia del administrativo");
             experiencia = entrada.nextLine().trim();
-
-            if (experiencia.isEmpty()) {
-                System.out.println("La experiencis es obligatoria. Por favor, " +
-                        "ingrese experiencia válida.");
-            }else if (experiencia.length() > 100) {
+            if (experiencia.length() > 100) {
                 System.out.println("La experiencia no  debe sobrepasar los 100 caracteres. " +
                         "Por favor, ingrese un dato válido.");
             }
-
-        } while (experiencia.isEmpty() || experiencia.length() > 100);
+        } while (experiencia.length() > 100);
 
         administrativo.setArea(experiencia);
 
@@ -433,7 +444,7 @@ public class ContenedorUs {
     }
 
     /**
-     * Métod para eliminar un usuario de la lista
+     * Método para eliminar un usuario de la lista
      */
     public void eliminarUsuario(){
         Scanner entrada = new Scanner(System.in);
