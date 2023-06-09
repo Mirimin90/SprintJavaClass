@@ -38,13 +38,13 @@ public class ContenedorUs {
          */
         String run;
         do {
-            System.out.println("Ingrese run del cliente sin puntos y con guión:");
+            System.out.println("Ingrese RUN del cliente, sin puntos y con guión:");
             run = entrada.nextLine().trim();
 
             if (Validador.validaRun(run)) {
                 cliente.setRun(run);
             } else {
-                System.out.println("Rut inválido. Intente nuevamente.");
+                System.out.println("RUN inválido. Intente nuevamente.");
             }
         } while (!Validador.validaRun(run));
 
@@ -113,11 +113,11 @@ public class ContenedorUs {
 
         String telefono;
         do {
-            System.out.println("Ingrese telefono del cliente");
+            System.out.println("Ingrese número de teléfono del cliente");
             telefono = entrada.nextLine().trim();
 
             if (telefono.isEmpty()) {
-                System.out.println("El telefono es obligatorio. Por favor, ingrese un dato válido.");
+                System.out.println("El teléfono es obligatorio. Por favor, ingrese un dato válido.");
             }
         } while (telefono.isEmpty());
 
@@ -132,9 +132,11 @@ public class ContenedorUs {
             System.out.println("Ingrese AFP del cliente");
             afp = entrada.nextLine().trim();
 
+
             if (afp.length() < 4 || afp.length() > 30) {
                 System.out.println("La AFP debe tener entre 4 y 30 caracteres. " +
                         "Por favor, ingrese un dato válido.");
+
             }
         } while (afp.length() < 4 || afp.length() > 30);
 
@@ -147,11 +149,13 @@ public class ContenedorUs {
         String salud;
 
         do {
+
             System.out.println("Ingrese sistema de salud 1. Fonasa / 2. Isapre");
             salud = entrada.nextLine();
 
             if (!salud.equals("1") && !salud.equals("2")) {
                 System.out.println("Debe ingrese opción salud 1. Fonasa / 2. Isapre");
+
             }
         } while (!salud.equals("1") && !salud.equals("2"));
 
@@ -167,7 +171,8 @@ public class ContenedorUs {
             direccion = entrada.nextLine().trim();
 
             if (direccion.length() > 70) {
-                System.out.println("La dirección no debe ser mayor a 70 caracteres");
+                System.out.println("La dirección no debe ser mayor a 70 caracteres."  +
+                        "Por favor, modifique su respuesta.");
             }
         } while (direccion.length() > 70);
 
@@ -178,11 +183,11 @@ public class ContenedorUs {
          */
         String comuna;
         do {
-            System.out.println("Ingrese comuna del cliente");
+            System.out.println("Ingrese comuna del domicilio del cliente");
             comuna = entrada.nextLine().trim();
 
             if (comuna.length() > 50) {
-                System.out.println("La comuna no debe ser mayor a 50 caracteres");
+                System.out.println("Comuna no debe ser mayor a 50 caracteres, ingrese un dato válido");
             }
         } while (comuna.length() > 70);
 
@@ -193,14 +198,16 @@ public class ContenedorUs {
           */
         int edad;
         do {
-            System.out.println("Ingrese edad del cliente");
+            System.out.println("Ingrese la edad del cliente");
             edad = entrada.nextInt();
+
 
             if (edad < 0  || edad > 150) {
                 System.out.println("La edad debe ser entre 0 y 150 años");
 
             }
         } while (edad < 0  || edad > 150);
+
 
         cliente.setEdad(edad);
 
@@ -219,13 +226,13 @@ public class ContenedorUs {
 
         String run;
         do {
-            System.out.println("Ingrese run del profesional sin puntos y con guión:");
+            System.out.println("Ingrese RUN del profesional sin puntos y con guión:");
             run = entrada.nextLine().trim();
 
             if (Validador.validaRun(run)) {
                 profesional.setRun(run);
             } else {
-                System.out.println("Rut inválido. Intente nuevamente.");
+                System.out.println("RUN inválido. Intente nuevamente.");
             }
         } while (!Validador.validaRun(run));
 
@@ -242,7 +249,7 @@ public class ContenedorUs {
             if (nombres.isEmpty()) {
                 System.out.println("El nombre es obligatorio. Por favor, ingrese un valor válido.");
             } else if (nombres.length() < 5 || nombres.length() > 30) {
-                System.out.println("El nombre debe tener entre 5 y 30 caracteres. Por favor, ingrese un valor válido.");
+                System.out.println("El dato ingresado debe tener entre 5 y 30 caracteres. Por favor, ingrese un valor válido.");
             }
         } while (nombres.isEmpty() || nombres.length() < 5 || nombres.length() > 30);
 
@@ -262,7 +269,7 @@ public class ContenedorUs {
                 System.out.println("El apellido es obligatorio. Por favor, " +
                         "ingrese un valor válido.");
             } else if (apellidos.length() < 5 || apellidos.length() > 30) {
-                System.out.println("El apellido debe tener entre 5 y 30 caracteres. " +
+                System.out.println("El dato ingresado debe tener entre 5 y 30 caracteres. " +
                         "Por favor, ingrese un valor válido.");
             }
         } while (apellidos.isEmpty() || apellidos.length() < 5 || apellidos.length() > 30);
@@ -293,12 +300,17 @@ public class ContenedorUs {
          */
         String titulo;
         do {
-            System.out.println("Ingrese título del profesional");
+            System.out.println("Ingrese el título del profesional");
             titulo = entrada.nextLine().trim();
 
             if (titulo.isEmpty()) {
                 System.out.println("El titulo es obligatorio. Por favor, " +
                         "ingrese un dato válido.");
+
+            } else if (titulo.length() < 10 || titulo.length() > 50) {
+                System.out.println("Los datos ingresados deben ser entre 10 y 0 caracteres," +
+                        "Ingrese un dato válido" );
+
             }
         } while (titulo.isEmpty());
         profesional.setTitulo(titulo);
@@ -309,13 +321,15 @@ public class ContenedorUs {
 
         String fechaIngreso;
         do {
+
             System.out.println("Ingrese fecha de ingreso del profesional, formato" +
                     "DD/MM/AAAA");
+
             fechaIngreso = entrada.nextLine().trim();
 
             if (fechaIngreso.isEmpty()) {
                 System.out.println("La fecha de ingreso es obligatorio. Por favor, " +
-                        "ingrese una fecha válida.");
+                        "ingrese una fecha válida. (DD/MM/AAAA)");
             }
             else if (!Validador.validaFecha(fechaIngreso)) {
                 System.out.println("Fecha inválida. Por favor, ingrese una fecha en formato DD/MM/AAAA.");
@@ -337,13 +351,13 @@ public class ContenedorUs {
 
         String run;
         do {
-            System.out.println("Ingrese run del administrativo sin puntos y con guión:");
+            System.out.println("Ingrese RUN del administrativo sin puntos y con guión:");
             run = entrada.nextLine().trim();
 
             if (Validador.validaRun(run)) {
                 administrativo.setRun(run);
             } else {
-                System.out.println("Rut inválido. Intente nuevamente.");
+                System.out.println("RUN inválido. Intente nuevamente.");
             }
         } while (!Validador.validaRun(run));
 
@@ -359,7 +373,7 @@ public class ContenedorUs {
             if (nombres.isEmpty()) {
                 System.out.println("El nombre es obligatorio. Por favor, ingrese un valor válido.");
             } else if (nombres.length() < 5 || nombres.length() > 30) {
-                System.out.println("El nombre debe tener entre 5 y 30 caracteres. Por favor, ingrese un dato válido.");
+                System.out.println("El dato ingresado debe tener entre 5 y 30 caracteres. Por favor, ingrese un dato válido.");
             }
         } while (nombres.isEmpty() || nombres.length() < 5 || nombres.length() > 30);
 
@@ -378,7 +392,7 @@ public class ContenedorUs {
                 System.out.println("El apellido es obligatorio. Por favor, " +
                         "ingrese un dato válido.");
             } else if (apellidos.length() < 5 || apellidos.length() > 30) {
-                System.out.println("El apellido debe tener entre 5 y 30 caracteres. " +
+                System.out.println("El dato ingresado debe tener entre 5 y 30 caracteres. " +
                         "Por favor, ingrese un dato válido.");
             }
         } while (apellidos.isEmpty() || apellidos.length() < 5 || apellidos.length() > 30);
@@ -389,8 +403,10 @@ public class ContenedorUs {
          */
         String fecha;
         do {
+
             System.out.println("Ingrese fecha de naciemiento del administrativo," +
                     "formato DD/MM/AAAA");
+
             fecha = entrada.nextLine().trim();
 
             if (fecha.isEmpty()) {
@@ -410,14 +426,14 @@ public class ContenedorUs {
 
         String area;
         do {
-            System.out.println("Ingrese area para el administrativo");
+            System.out.println("Ingrese área para el administrativo");
             area = entrada.nextLine().trim();
 
             if (area.isEmpty()) {
-                System.out.println("El area es obligatoria. Por favor, " +
+                System.out.println("El área es obligatoria. Por favor, " +
                         "ingrese un dato válido.");
             } else if (area.length() < 5 || area.length() > 20) {
-                System.out.println("El area debe tener entre 5 y 20 caracteres. " +
+                System.out.println("El área debe tener entre 5 y 20 caracteres. " +
                         "Por favor, ingrese un dato válido.");
             }
         } while (area.isEmpty() || area.length() < 5 || area.length() > 20);
@@ -429,8 +445,9 @@ public class ContenedorUs {
 
         String experiencia;
         do {
-            System.out.println("Ingrese experiencia del administrativo");
+            System.out.println("Ingrese la experiencia previa del administrativo");
             experiencia = entrada.nextLine().trim();
+
             if (experiencia.length() > 100) {
                 System.out.println("La experiencia no  debe sobrepasar los 100 caracteres. " +
                         "Por favor, ingrese un dato válido.");
@@ -448,7 +465,7 @@ public class ContenedorUs {
      */
     public void eliminarUsuario(){
         Scanner entrada = new Scanner(System.in);
-        System.out.println("Ingrese run de usuario a eliminar");
+        System.out.println("Ingrese RUN de usuario a eliminar");
         String run = entrada.nextLine();
 
         for (Iasesoria asesoria : asesorias) {
